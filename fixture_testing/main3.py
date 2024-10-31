@@ -18,9 +18,9 @@ def db_connection():
 def test_db_operations(db_connection):
     cursor = db_connection.cursor()
 
-    cursor.execute("INSERT INTO test_table (name) VALUES ('Test Name')")
+    cursor.execute("INSERT INTO test_table (name) VALUES ('Test')")
     db_connection.commit()
 
     cursor.execute("SELECT name FROM test_table WHERE id = 1")
     result = cursor.fetchone()
-    assert result[0] == 'Test Name'
+    assert result[0] == 'Test'
